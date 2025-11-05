@@ -1,14 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Information Form</title>
-    <link rel="stylesheet" href="./css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Information Form</title>
+  <link rel="stylesheet" href="./css/styles.css" />
 </head>
 <body>
-    <form enctype="multipart/form-data" action="index.html" method="get">
-        <!-- FORM FIELDS HERE -->
-    </form>
+
+  <form enctype="multipart/form-data" action="index.html" method="post">
+
+    <!-- PERSONAL INFORMATION -->
+    <fieldset>
+      <legend>Personal Information</legend>
+
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="password">Password (min 12 characters):</label>
+      <input type="password" id="password" name="password" minlength="12" required />
+
+      <label for="date">Date of Birth:</label>
+      <input type="date" id="date" name="date" />
+    </fieldset>
+
+    <!-- PREFERENCES -->
+    <fieldset>
+      <legend>Preferences</legend>
+
+      <label for="color">Favorite Color:</label>
+      <input type="color" id="color" name="color" value="#000000" />
+
+      <label for="hobby">Hobby:</label>
+      <input list="hobbies" id="hobby" name="hobby" />
+      <datalist id="hobbies">
+        <option value="Drawing">
+        <option value="Swimming">
+        <option value="Dancing">
+      </datalist>
+
+      <label for="experience">Experience Level:</label>
+      <input type="range" id="experience" name="experience" min="0" max="10" step="1" />
+    </fieldset>
+
+    <!-- CONTACT PREFERENCES -->
+    <fieldset>
+      <legend>Contact Preferences</legend>
+
+      <label for="contact">Preferred Contact Method:</label>
+      <select id="contact" name="contact">
+        <option value="email">Email</option>
+        <option value="sms">SMS</option>
+        <option value="phone">Phone</option>
+      </select>
+
+      <label for="subscribe">
+        <input type="checkbox" id="subscribe" name="subscribe" />
+        Subscribe to newsletter
+      </label>
+    </fieldset>
+
+    <!-- GENDER -->
+    <fieldset>
+      <legend>Gender</legend>
+      <label><input type="radio" name="gender" value="male" /> Masculine</label>
+      <label><input type="radio" name="gender" value="female" /> Feminine</label>
+      <label><input type="radio" name="gender" value="other" /> Other</label>
+    </fieldset>
+
+    <!-- MORE INFORMATION -->
+    <fieldset>
+      <legend>More Information</legend>
+      <textarea name="message" cols="90" rows="8" placeholder="Write something..."></textarea>
+    </fieldset>
+
+    <!-- UPLOAD DOCUMENTS -->
+    <fieldset>
+      <legend>Upload Documents</legend>
+      <label for="files">Resume and other certificates:</label>
+      <input type="file" id="files" name="files" accept=".doc,.docx,.pdf,.jpg,.png" multiple />
+    </fieldset>
+
+    <!-- SUBMISSION -->
+    <fieldset>
+      <legend>Submission</legend>
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
+    </fieldset>
+
+  </form>
+
 </body>
 </html>
